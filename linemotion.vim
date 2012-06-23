@@ -3,14 +3,13 @@ if !has('python')
     finish
 endif
 
-nmap <leader><leader>h :call GoLeft()<CR>
-nmap <leader><leader>l :call GoRight()<CR>
+nmap <leader>h :call GoLeft()<CR>
+nmap <leader>l :call GoRight()<CR>
 
-nmap <leader><leader>i :call Test()<CR>
 python << EOF
 
-import os
-TMP_FILE = "/tmp/" + "vimove_" + str(os.getpid())
+import tempfile, os
+TMP_FILE = tempfile.mktemp(suffix=str(os.getpid()), prefix='vim-linemotion_')
 def get_last_info():
     import datetime, time
     import vim
@@ -71,12 +70,3 @@ change_direction('right')
 EOF
 endfunction
 
-function! Test()
-echo has("linux")
-python << EOF
-import vim
-print dir(vim)
-print vim.current.range
-print vim.current.window
-EOF
-endfunction
