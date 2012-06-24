@@ -15,7 +15,14 @@ By default, there is no key binding. Because I konw that the default binding is 
     nmap <leader>l :Lright<cr>
     nmap <leader>h :Lleft<cr>
 
+#Installation
+
+Decompress the tar ball you download, and put the linemotion.vim in ~/.vim/plugin/ .
+
+Besides, LineMotion is compatible with pathogen!
 
 #Usage example
+
+Make sure you already put the statements in your vimrc as above.
 
 Type <leader>l to move the cursor to the middle of the line. If the target you wanna move to is right of the cursor, type <leader>l again. Otherwise, type <leader>h. It's easy to use, isn't it?
