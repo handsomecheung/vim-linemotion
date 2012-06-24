@@ -3,8 +3,11 @@ if !has('python')
     finish
 endif
 
-nmap <leader>h :call GoLeft()<CR>
-nmap <leader>l :call GoRight()<CR>
+"nmap <leader>h :call LMGoLeft()<CR>
+"nmap <leader>l :call LMGoRight()<CR>
+
+command! -nargs=0 -bar Lright call s:LineMotionGoRight()
+command! -nargs=0 -bar Lleft call s:LineMotionGoLeft()
 
 python << EOF
 
@@ -57,14 +60,14 @@ def change_direction(direction):
         set_last_info(current_info + ',' + str(float(last_off_set)/2))
 EOF
 
-function! GoLeft()
+function! s:LineMotionGoLeft()
 
 python << EOF
 change_direction('left')
 EOF
 endfunction
 
-function! GoRight()
+function! s:LineMotionGoRight()
 python << EOF
 change_direction('right')
 EOF
