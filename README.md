@@ -25,4 +25,4 @@ Besides, LineMotion is compatible with pathogen!
 
 Make sure you already put the statements in your vimrc as above.
 
-Type <leader>l to move the cursor to the middle of the line. If the target you wanna move to is right of the cursor, type <leader>l again. Otherwise, type <leader>h. It's easy to use, isn't it?
+Type `<leader>l` to move the cursor to the middle of the line. If the target you wanna move to is right of the cursor, type `<leader>l` again. Otherwise, type `<leader>h`. It's easy to use, isn't it?
